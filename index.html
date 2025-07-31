@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agência Creative - Marketing Digital</title>
     <meta name="description"
         content="Criamos experiências digitais que convertem. Agência especializada em marketing digital e produção audiovisual." />
-    
+   
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
 
     <!-- Configuração do Tailwind -->
     <script>
@@ -74,6 +77,7 @@
         }
     </script>
 
+
     <!-- Estilos CSS -->
     <style>
         /* Estilos Globais */
@@ -82,35 +86,43 @@
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f5f5f5' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
+
         .gradient-primary {
             background-image: linear-gradient(135deg, hsl(0, 84%, 60%), hsl(0, 90%, 70%));
         }
+
 
         /* Estilos Personalizados */
         .bg-light {
             background-color: hsl(0, 0%, 98%);
         }
 
+
         .bg-primary {
             background-color: hsl(0, 83%, 66%);
         }
+
 
         .text-primary {
             color: hsl(0, 53%, 33%);
         }
 
+
         .text-foreground {
             color: hsl(0, 0%, 20%);
         }
+
 
         .text-muted-foreground {
             color: hsl(0, 0%, 50%);
         }
 
+
         .shadow-soft {
             box-shadow: var(--tw-shadow);
             --tw-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.15);
         }
+
 
         /* Transições suaves para elementos */
         .transition-all {
@@ -119,6 +131,7 @@
             transition-duration: 150ms;
         }
 
+
         /* Estilo para a seção "Quem Somos" */
         #quemsomos-content {
             display: none;
@@ -126,10 +139,12 @@
             transition: opacity 0.3s ease-in-out;
         }
 
+
         #quemsomos-content.active {
             display: block;
             opacity: 1;
         }
+
 
         /* Estilo para o cabeçalho fixo - AGORA BRANCO */
         .header-container {
@@ -139,17 +154,19 @@
     </style>
 </head>
 
+
 <body class="font-sans antialiased">
     <!-- Background com efeito de scroll -->
     <div id="hero-header-background"
-        class="fixed top-0 left-0 w-full h-screen z-0 transition-opacity duration-500 ease-in-out bg-cover bg-center bg-no-repeat"
-        style="background-image: url('background-header.jpg'); opacity: 1;"></div>
+        class="fixed top-0 left-0 w-full h-screen z-0 transition-opacity duration-500 ease-in-out bg-cover bg-center bg-no-repeat"></div>
+
 
         <!-- Cabeçalho Fixo -->
     <header class="header-container fixed top-0 left-0 w-full z-50 py-4">
         <div class="container mx-auto px-6 md:px-8">
             <div class="flex justify-between items-center">
                 <h1 class="text-3xl font-extrabold text-primaryDark">Creative</h1>
+
 
                 <!-- Menu Mobile - Ícone em vermelho escuro -->
                 <button id="mobile-menu-button" class="md:hidden text-primaryDark">
@@ -160,6 +177,7 @@
                         <line x1="4" x2="20" y1="18" y2="18" />
                     </svg>
                 </button>
+
 
                 <!-- Menu Desktop - Itens em vermelho escuro -->
                 <nav class="hidden md:flex items-center space-x-8">
@@ -173,6 +191,7 @@
             </div>
         </div>
     </header>
+
 
     <!-- Menu Mobile (oculto por padrão) - Fundo branco e itens em vermelho -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 p-6 mt-16">
@@ -194,12 +213,15 @@
         </nav>
     </div>
 
+
     <!-- Espaço para o cabeçalho fixo -->
     <div class="pt-20"></div>
+
 
     <!-- Wrapper Principal -->
     <div class="relative z-10">
         <div class="container mx-auto px-6 py-8 md:px-8">
+
 
             <!-- Menu Mobile (oculto por padrão) -->
             <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 p-6 mt-16">
@@ -222,21 +244,47 @@
                 </nav>
             </div>
 
+
             <main>
                 <!-- Seção Hero -->
-                <section class="min-h-screen flex items-center justify-center text-center px-6">
-                    <div class="max-w-3xl">
-                        <h1 class="text-4xl sm:text-5xl font-bold text-primaryDark mb-4">TRANSFORMAMOS IDEIAS EM
-                            CONEXÕES
-                            REAIS.</h1>
-                        <p class="text-lg sm:text-xl text-gray-700 mb-6">Somos a Creative, uma agência de marketing
-                            digital para empresas, especializada também em fotografia profissional e produção de filmes
-                            criativos de curta duração.</p>
-                        <a href="#contact"
-                            class="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-red-700 transition">Solicite
-                            um orçamento</a>
-                    </div>
-                </section>
+<section class="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 bg-white pt-24 overflow-hidden">
+  <!-- SVG decorativo no topo (preto) -->
+  <svg class="absolute top-0 left-0 w-full h-[30vh] z-0" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,100 C30,80 70,120 100,100 L100,0 L0,0 Z" fill="black" />
+  </svg>
+
+  <!-- SVG decorativo na base (vermelho escuro) -->
+  <svg class="absolute bottom-0 right-0 w-full h-[22vh] z-0" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C30,20 70,-20 100,0 L100,100 L0,100 Z" fill="#8B0000" />
+  </svg>
+
+  <!-- Conteúdo -->
+  <div class="max-w-3xl z-10 relative">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-red-600 leading-snug sm:leading-tight mb-6">
+      TRANSFORMAMOS<br class="hidden sm:inline" />
+      IDEIAS EM<br class="hidden sm:inline" />
+      CONEXÕES REAIS
+    </h1>
+    <p class="text-base sm:text-lg text-gray-700 mb-6 px-2">
+      Somos a Creative, uma agência de marketing digital para empresas, especializada também em fotografia profissional e produção de filmes criativos de curta duração.
+    </p>
+    <a href="#contact" class="inline-block px-6 py-3 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600 transition">
+      Solicite um orçamento
+    </a>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const section = document.getElementById('header-section');
+    const fade = document.getElementById('fade-bg');
+    const scrollTop = window.scrollY;
+    const fadeHeight = section.offsetHeight / 2;
+    const opacity = Math.min(scrollTop / fadeHeight, 1);
+    fade.style.opacity = opacity;
+  });
+</script>
+
 
                 <!-- Seção Quem Somos (inicialmente oculta) -->
                 <section id="quemsomos-content" class="py-20">
@@ -245,6 +293,7 @@
                             <p class="text-sm font-bold text-primary tracking-wider uppercase">Sobre Nós</p>
                             <h3 class="text-3xl md:text-4xl font-bold text-foreground mt-2">Quem Somos</h3>
                         </div>
+
 
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
@@ -273,6 +322,7 @@
                     </div>
                 </section>
 
+
                 <!-- Seção de Serviços -->
                 <section id="services" class="py-20 bg-white px-6">
                     <div class="max-w-6xl mx-auto text-center">
@@ -280,6 +330,7 @@
                         <p class="text-gray-600 mb-12">Serviços digitais completos para destacar sua marca no ambiente
                             online.</p>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
 
                             <!-- Identidade Visual -->
                             <div
@@ -297,6 +348,7 @@
                                     marca para
                                     empresas e produtos.</p>
                             </div>
+
 
                             <!-- Social Media -->
                             <div
@@ -316,6 +368,7 @@
                                     e mais.</p>
                             </div>
 
+
                             <!-- Produção de Vídeo -->
                             <div
                                 class="bg-light p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
@@ -332,6 +385,7 @@
                                     sociais com
                                     edição profissional.</p>
                             </div>
+
 
                             <!-- Produção Fotográfica -->
                             <div
@@ -350,6 +404,7 @@
                                     institucional.
                                 </p>
                             </div>
+
 
                             <!-- Consultoria Digital -->
                             <div
@@ -371,6 +426,7 @@
                     </div>
                 </section>
 
+
                 <!-- Seção de Cases -->
                 <section id="cases" class="mb-24">
                     <div class="text-center max-w-2xl mx-auto mb-12">
@@ -380,6 +436,7 @@
                         <p class="text-lg text-muted-foreground mt-4">Explore alguns dos nossos trabalhos mais recentes.
                             Cada projeto é uma história de sucesso e colaboração.</p>
                     </div>
+
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                         <!-- Case 1 -->
@@ -488,6 +545,7 @@
                     </div>
                 </section>
 
+
                 <!-- Seção de Contato -->
                 <section id="contact" class="py-20">
                     <div class="max-w-4xl mx-auto px-6">
@@ -498,6 +556,7 @@
                             <p class="text-lg text-muted-foreground mt-4">Preencha o formulário abaixo e retornaremos em
                                 breve.</p>
                         </div>
+
 
                         <form class="space-y-6">
                             <div class="grid md:grid-cols-2 gap-6">
@@ -539,6 +598,7 @@
         </div>
     </div>
 
+
     <!-- Rodapé -->
     <footer class="bg-primary text-white py-12 mt-16 relative z-10">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -565,6 +625,7 @@
                 </ul>
             </div>
 
+
             <!-- Agência -->
             <div>
                 <h4 class="text-lg font-bold mb-4">Agência</h4>
@@ -574,6 +635,7 @@
                     <li><a href="#cases" class="hover:underline">Projetos</a></li>
                 </ul>
             </div>
+
 
             <!-- Formulário de Contato -->
             <div>
@@ -592,12 +654,14 @@
             </div>
         </div>
 
+
         <div class="text-center mt-10 text-sm text-gray-400">
             <p>© 2025 Agência Creative. Todos os direitos reservados.</p>
             <p>Desenvolvido por<a href="https://christiankcastro.github.io/Korb_design/"
                     class="text-white hover:underline"> Korb Design</a></p>
         </div>
     </footer>
+
 
     <!-- JavaScript -->
     <script>
@@ -610,20 +674,24 @@
             headerBackground.style.opacity = opacity;
         });
 
+
         // Menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const closeMobileMenu = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
+
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         });
 
+
         closeMobileMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             document.body.style.overflow = '';
         });
+
 
         // Controle da seção "Quem Somos"
         const quemsomosBtn = document.getElementById('quemsomos-btn');
@@ -631,14 +699,15 @@
         const footerQuemsomosBtn = document.getElementById('footer-quemsomos-btn');
         const quemsomosContent = document.getElementById('quemsomos-content');
 
+
         function toggleQuemSomos() {
             quemsomosContent.classList.toggle('active');
-            
+           
             // Rolagem suave para a seção
             if (quemsomosContent.classList.contains('active')) {
                 quemsomosContent.scrollIntoView({ behavior: 'smooth' });
             }
-            
+           
             // Fechar menu mobile se estiver aberto
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
@@ -646,9 +715,11 @@
             }
         }
 
+
         quemsomosBtn.addEventListener('click', toggleQuemSomos);
         mobileQuemsomosBtn.addEventListener('click', toggleQuemSomos);
         footerQuemsomosBtn.addEventListener('click', toggleQuemSomos);
+
 
         // Fechar menu mobile ao clicar em um link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
@@ -660,4 +731,8 @@
     </script>
 </body>
 
+
 </html>
+
+
+
