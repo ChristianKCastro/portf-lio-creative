@@ -145,6 +145,19 @@
         .pulse-glow {
             animation: pulse-glow 2s ease-in-out infinite;
         }
+
+@media (min-width: 768px) {
+    .header-container .container > div {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .header-container nav {
+        justify-self: center;
+    }
+}
     </style>
 </head>
 
