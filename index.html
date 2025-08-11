@@ -5,18 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agência Creative - Marketing Digital</title>
-    <meta name="description"
-        content="Criamos experiências digitais que convertem. Agência especializada em marketing digital e produção audiovisual." />
-   
-    <!-- Fontes -->
+    <meta name="description" content="Criamos experiências digitais que convertem. Agência especializada em marketing digital e produção audiovisual." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Configuração do Tailwind -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -24,75 +21,41 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        bebas: ['Bebas Neue', 'sans-serif'],
                     },
                     colors: {
-                        // Paleta Creative
-                        redDark: '#C92131',     // Vermelho Escuro
-                        redMedium: '#E52631',   // Vermelho Médio  
-                        redLight: '#F44342',    // Vermelho Claro
-                        white: '#FFFFFF',       // Branco (Fundo)
-                        black: '#000000',       // Preto (Para texto e detalhes fortes)
-                        grayDark: '#333333',    // Cinza Escuro (Para texto secundário)
-                        grayLight: '#F0F0F0',   // Cinza Claro (Para fundos ou elementos suaves)
-                        blueNavy: '#1E3A5F',    // Azul Marinho (Uma cor complementar)
-                        yellowGold: '#FFB703',  // Amarelo Ouro (Para destaques)
-                        
-                        // Mapeamento para compatibilidade
-                        primary: {
-                            DEFAULT: '#C92131',
-                            foreground: '#FFFFFF',
-                        },
-                        primaryDark: {
-                            DEFAULT: '#C92131',
-                        },
-                        background: '#C92131',  // Fundo vermelho
-                        foreground: '#FFFFFF',
-                        card: {
-                            DEFAULT: '#FFFFFF',
-                            foreground: '#000000',
-                        },
-                        border: '#F44342',
-                        input: '#F0F0F0',
-                        ring: '#E52631',
-                        secondary: {
-                            DEFAULT: '#F0F0F0',
-                            foreground: '#000000',
-                        },
-                        muted: {
-                            DEFAULT: '#F0F0F0',
-                            foreground: '#333333',
-                        },
-                        accent: {
-                            DEFAULT: '#FFB703',
-                            foreground: '#000000',
-                        },
+                        dark: '#FFFFFF',
+                        grayDark: '#F8F9FA',
+                        grayMedium: '#6B7280',
+                        grayLight: '#9CA3AF',
+                        white: '#1F2937',
+                        redPrimary: '#DC2626',
+                        redHover: '#EF4444',
                     },
                     borderRadius: {
-                        xl: "1.5rem",
-                        lg: "1rem",
-                        md: "0.75rem",
-                        sm: "0.5rem",
+                        xl: "1rem",
+                        lg: "0.75rem",
+                        md: "0.5rem",
+                        sm: "0.25rem",
                     },
                     boxShadow: {
-                        soft: '0 4px 20px -4px rgba(201, 33, 49, 0.15)',
-                        medium: '0 8px 30px -8px rgba(201, 33, 49, 0.2)',
-                        glow: '0 0 20px rgba(255, 183, 3, 0.3)',
+                        soft: '0 4px 15px rgba(220, 38, 38, 0.1)',
+                        medium: '0 8px 25px rgba(220, 38, 38, 0.15)',
+                        glow: '0 0 20px rgba(220, 38, 38, 0.5)',
                     },
                 }
             }
         }
     </script>
 
-    <!-- Estilos CSS -->
     <style>
-        /* Estilos Globais */
         body {
-            background-color: #C92131; /* Fundo vermelho */
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E52631' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-color: #FFFFFF;
+            color: #374151;
         }
 
         .gradient-primary {
-            background-image: linear-gradient(135deg, #C92131, #E52631);
+            background-image: linear-gradient(135deg, #DC2626, #EF4444);
         }
 
         .header-container {
@@ -107,15 +70,28 @@
 
         .floating-card {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(248, 249, 250, 0.9);
+            border: 1px solid rgba(220, 38, 38, 0.2);
         }
 
-        .glow-effect {
-            box-shadow: 0 0 30px rgba(255, 183, 3, 0.4);
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
         }
 
-        /* Seção "Quem Somos" */
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(220, 38, 38, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.6); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
         #quemsomos-content {
             display: none;
             opacity: 0;
@@ -126,509 +102,400 @@
             display: block;
             opacity: 1;
         }
-
-        /* Animações */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 183, 3, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(255, 183, 3, 0.6); }
-        }
-
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
     </style>
 </head>
 
-<body class="font-sans antialiased">
-    <!-- Cabeçalho Fixo -->
+<body class="font-sans antialiased text-gray-700">
+
     <header class="header-container fixed top-0 left-0 w-full z-50 py-4">
-        <div class="container mx-auto px-6 md:px-8">
+        <div class="container mx-auto px-6 md:px-8 max-w-7xl">
             <div class="flex justify-between items-center">
-                <!-- Logo com símbolo # -->
                 <div class="flex items-center space-x-2">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z" fill="#C92131"/>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-redPrimary">
+                        <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z" fill="currentColor"/>
                     </svg>
-                    <h1 class="text-3xl font-extrabold text-redDark">#Creative</h1>
+                    <h1 class="text-3xl font-extrabold text-gray-900">#Creative</h1>
                 </div>
 
-                <!-- Menu Mobile - Ícone em vermelho escuro -->
-                <button id="mobile-menu-button" class="md:hidden text-redDark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <button id="mobile-menu-button" class="md:hidden text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="4" x2="20" y1="12" y2="12" />
                         <line x1="4" x2="20" y1="6" y2="6" />
                         <line x1="4" x2="20" y1="18" y2="18" />
                     </svg>
                 </button>
 
-                <!-- Menu Desktop - Itens em vermelho escuro -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <button id="quemsomos-btn" class="text-redDark hover:text-redMedium transition-colors font-medium">Quem Somos</button>
-                    <a href="#services" class="text-redDark hover:text-redMedium transition-colors font-medium">Serviços</a>
-                    <a href="#cases" class="text-redDark hover:text-redMedium transition-colors font-medium">Cases</a>
-                    <!-- Botão de Contato com gradiente -->
-                    <a href="#contact"
-                        class="gradient-primary text-white px-6 py-3 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
+                    <button id="quemsomos-btn" class="text-gray-700 hover:text-redPrimary transition-colors font-medium">Quem Somos</button>
+                    <a href="#services" class="text-gray-700 hover:text-redPrimary transition-colors font-medium">Serviços</a>
+                    <a href="#cases" class="text-gray-700 hover:text-redPrimary transition-colors font-medium">Cases</a>
+                    <a href="#contact-section" class="gradient-primary text-white px-6 py-3 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Menu Mobile -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 p-6 mt-16">
         <div class="flex justify-end mb-8">
-            <button id="close-mobile-menu" class="text-redDark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button id="close-mobile-menu" class="text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
         </div>
         <nav class="flex flex-col space-y-6 text-center">
-            <button id="mobile-quemsomos-btn" class="text-2xl text-redDark hover:text-redMedium transition-colors">Quem Somos</button>
-            <a href="#services" class="text-2xl text-redDark hover:text-redMedium transition-colors">Serviços</a>
-            <a href="#cases" class="text-2xl text-redDark hover:text-redMedium transition-colors">Cases</a>
-            <a href="#contact"
-                class="text-2xl gradient-primary text-white px-6 py-3 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
+            <button id="mobile-quemsomos-btn" class="text-2xl text-gray-700 hover:text-redPrimary transition-colors">Quem Somos</button>
+            <a href="#services" class="text-2xl text-gray-700 hover:text-redPrimary transition-colors">Serviços</a>
+            <a href="#cases" class="text-2xl text-gray-700 hover:text-redPrimary transition-colors">Cases</a>
+            <a href="#contact" class="text-2xl gradient-primary text-white px-6 py-3 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
         </nav>
     </div>
 
-    <!-- Espaço para o cabeçalho fixo -->
     <div class="pt-20"></div>
 
-    <!-- Wrapper Principal -->
-    <div class="relative z-10">
+    <main class="relative z-10">
         <div class="container mx-auto px-6 py-8 md:px-8">
-              <!-- Seção Hero -->
-<section class="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 pt-24 overflow-hidden">
-    <!-- Elementos decorativos -->
-    <div class="absolute inset-0 overflow-hidden">
-        <!-- SVG decorativo superior -->
-        <svg class="absolute top-10 left-10 w-16 h-16 text-yellowGold opacity-80 float-animation" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z"/>
-        </svg>
-        
-        <!-- Seta curva decorativa -->
-        <svg class="absolute top-1/3 right-20 w-24 h-24 text-yellowGold opacity-60" viewBox="0 0 100 100" fill="none">
-            <path d="M20 80 Q 50 20 80 50" stroke="currentColor" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-            <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="currentColor"/>
-                </marker>
-            </defs>
-        </svg>
-
-        <!-- Cards flutuantes simulando o design -->
-        <div class="absolute top-1/4 left-10 floating-card rounded-xl p-4 float-animation" style="animation-delay: 0.5s;">
-            <div class="w-12 h-12 bg-redMedium rounded-full mb-2"></div>
-            <div class="text-xs font-bold text-black">Fotografia</div>
-            <div class="text-xs text-grayDark">e Videomaker</div>
-        </div>
-
-        <div class="absolute bottom-1/3 right-10 floating-card rounded-xl p-4 float-animation" style="animation-delay: 1s;">
-            <div class="w-12 h-12 bg-yellowGold rounded-full mb-2 pulse-glow"></div>
-            <div class="text-xs font-bold text-black">Marketing</div>
-            <div class="text-xs text-grayDark">e Soluções Digitais</div>
-        </div>
-
-    <!-- Conteúdo Principal -->
-    <div class="max-w-4xl z-10 relative">
-        <!-- Título com # -->
-        <div class="mb-8">
-            <div class="flex items-center justify-center mb-4">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-yellowGold">
-                    <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <h1 class="text-3xl sm:text-6xl md:text-7xl font-black text-white leading-tight mb-6 hero-text">
-                #TRANSFORMAMOS<br/>
-                <span class="text-yellowGold">IDEIAS EM</span><br/>
-                <span class="text-white">CONEXÕES REAIS</span>
-            </h1>
-        </div>
-
-        <p class="text-lg sm:text-xl text-white mb-8 px-2 max-w-2xl mx-auto bg-black bg-opacity-40 p-4 rounded-lg">
-            Somos a Creative, uma agência de marketing digital para empresas, especializada também em fotografia profissional e produção de filmes criativos de curta duração.
-        </p>
-
-        <!-- Botões de ação -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#contact" class="inline-flex items-center px-8 py-4 bg-yellowGold text-black font-bold rounded-xl hover:shadow-glow transition-all transform hover:-translate-y-1">
-                <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Solicite um orçamento
-            </a>
-            
-            <a href="#cases" class="inline-flex items-center px-8 py-4 border-2 border-white text-white font-bold rounded-xl hover:bg-white hover:text-redDark transition-all">
-                <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                    <polygon points="10,8 16,12 10,16" fill="currentColor"/>
-                </svg>
-                Ver Nossos Cases
-            </a>
-        </div>
-    </div>
-</section>
-
-                <!-- Seção Quem Somos (inicialmente oculta) -->
-                <section id="quemsomos-content" class="py-20 bg-white rounded-t-3xl mt-20">
-                    <div class="max-w-4xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <p class="text-sm font-bold text-redDark tracking-wider uppercase">Sobre Nós</p>
-                            <h3 class="text-3xl md:text-4xl font-bold text-black mt-2">Quem Somos</h3>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <img src="logo-creative.jpg" alt="Equipe Creative" class="rounded-xl shadow-soft w-full">
-                            </div>
-                            <div>
-                                <p class="text-lg text-grayDark mb-4">
-                                    Na Agência Criative, somos movidos pela paixão de transformar marcas e ideias em
-                                    algo único e inesquecível. Nossa missão é ajudar empresas a se destacarem com
-                                    criatividade, soluções modernas e resultados reais.
-                                </p>
-                                <p class="text-lg text-grayDark mb-4">
-                                    Aqui, tratamos cada cliente como especial, criando identidades jovens e autênticas,
-                                    que se conectam com o público e geram impacto. Nosso trabalho vai além do
-                                    convencional - é pensado nos detalhes do futuro, sempre focado em qualidade e
-                                    performance.
-                                </p>
-                                <p class="text-lg text-grayDark">
-                                    Nosso diferencial? Sempre buscamos tornar nosso trabalho mais acessível, oferecendo
-                                    promoções e campanhas que reduzem o valor da parcela mensal sem perder a excelência.
-                                    Acreditamos que boas parcerias começam com confiança e cuidado, e estamos aqui para
-                                    caminhar lado a lado com nossos clientes, construindo histórias de sucesso.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Seção de Serviços -->
-                <section id="services" class="py-20 bg-white px-6">
-                    <div class="max-w-6xl mx-auto text-center">
-                        <h2 class="text-3xl font-bold mb-4 text-black">Nossas Soluções</h2>
-                        <p class="text-grayDark mb-12">Serviços digitais completos para destacar sua marca no ambiente online.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                            <!-- Identidade Visual -->
-                            <div class="bg-grayLight p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-redLight/20">
-                                <div class="bg-redMedium/10 text-redDark rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M3 7h18M3 12h18M3 17h18" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold text-black mb-3">Identidade Visual</h3>
-                                <p class="text-grayDark">Criação de logo, paleta de cores, tipografia e aplicação da marca para empresas e produtos.</p>
-                            </div>
-
-                            <!-- Social Media -->
-                            <div class="bg-grayLight p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-redLight/20">
-                                <div class="bg-redMedium/10 text-redDark rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M17 2H7a5 5 0 00-5 5v10a5 5 0 005 5h10a5 5 0 005-5V7a5 5 0 00-5-5z" />
-                                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-                                        <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold text-black mb-3">Redes Sociais</h3>
-                                <p class="text-grayDark">Gestão de conteúdo, design de posts e estratégias para Instagram, Facebook e mais.</p>
-                            </div>
-
-                            <!-- Produção de Vídeo -->
-                            <div class="bg-grayLight p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-redLight/20">
-                                <div class="bg-redMedium/10 text-redDark rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold text-black mb-3">Videomaker</h3>
-                                <p class="text-grayDark">Criação de vídeos promocionais, institucionais e para redes sociais com edição profissional.</p>
-                            </div>
-
-                            <!-- Produção Fotográfica -->
-                            <div class="bg-grayLight p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-redLight/20">
-                                <div class="bg-redMedium/10 text-redDark rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l4-4h10l4 4v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
-                                        <circle cx="12" cy="13" r="4" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold text-black mb-3">Fotografia</h3>
-                                <p class="text-grayDark">Ensaios profissionais, fotos de produto, eventos e cobertura institucional.</p>
-                            </div>
-
-                            <!-- Consultoria Digital -->
-                            <div class="bg-grayLight p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-redLight/20">
-                                <div class="bg-redMedium/10 text-redDark rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12c0-4.418-3.582-8-8-8S5 7.582 5 12s3.582 8 8 8 8-3.582 8-8z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-2xl font-bold text-black mb-3">Consultoria Digital</h3>
-                                <p class="text-grayDark">Planejamento estratégico e orientação para transformar sua presença online.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Seção de Cases -->
-                <section id="cases" class="mb-24 bg-white px-6">
-                    <div class="text-center max-w-2xl mx-auto mb-12">
-                        <p class="text-sm font-bold text-redDark tracking-wider uppercase">Nossos Cases</p>
-                        <h3 class="text-3xl md:text-4xl font-bold text-black mt-2">Projetos que geram <span class="text-redDark">resultados</span></h3>
-                        <p class="text-lg text-grayDark mt-4">Explore alguns dos nossos trabalhos mais recentes. Cada projeto é uma história de sucesso e colaboração.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                        <!-- Case 1 -->
-                        <a href="https://agenciacreative.pixieset.com/vindadarafaela/" target="_blank"
-                            class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
-                            <img src="foto-case1.jpg" alt="Imagem do Case 1"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-redDark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                            </div>
-                        </a>
-                        
-                        <!-- Case 2 -->
-                        <a href="https://agenciacreative.pixieset.com/flyproduz/" target="_blank"
-                            class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
-                            <img src="foto-case2.jpg" alt="Imagem do Case 2"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-redDark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                            </div>
-                        </a>
-                        
-                        <!-- Case 3 -->
-                        <a href="https://agenciacreative.pixieset.com/ligacamponovense/" target="_blank"
-                            class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
-                            <img src="foto-case3.jpg" alt="Imagem do Case 3"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-redDark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                            </div>
-                        </a>
-                        
-                        <!-- Case 4 -->
-                        <a href="https://agenciacreative.pixieset.com/luizaborges/" target="_blank"
-                            class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
-                            <img src="foto-case4.jpg" alt="Imagem do Case 4"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-redDark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                            </div>
-                        </a>
-                        
-                        <!-- Case 5 -->
-                        <a href="https://agenciacreative.pixieset.com/tecdeenfermagem/" target="_blank"
-                            class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
-                            <img src="foto-case5.jpg" alt="Imagem do Case 5"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-redDark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                            </div>
-                        </a>
-                        
-                        <!-- Case 6 -->
-                        <a href="https://agenciacreative.pixieset.com/feiradecinciaspauloblasi/" target="_blank"
-                            class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
-                            <img src="foto-case6.jpg" alt="Imagem do Case 6"
-                                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                            <div
-                                class="absolute inset-0 bg-redDark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                                </svg>
-                            </div>
-                        </a>
-                    </div>
+            <section class="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 pt-24 overflow-hidden">
+                <div class="absolute inset-0 overflow-hidden">
+                    <svg class="absolute top-10 left-10 w-16 h-16 text-grayMedium opacity-50 float-animation" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z"/>
+                    </svg>
                     
-                    <div class="text-center mt-12">
-                        <a href="https://www.instagram.com/agen.creative?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            target="_blank"
-                            class="bg-grayLight text-black px-6 py-3 rounded-xl border border-redLight/20 hover:bg-redLight hover:text-white transition-colors font-semibold">
-                            Ver todos no Instagram
-                        </a>
-                    </div>
-                </section>
+                    <svg class="absolute top-1/3 right-20 w-24 h-24 text-grayMedium opacity-30" viewBox="0 0 100 100" fill="none">
+                        <path d="M20 80 Q 50 20 80 50" stroke="currentColor" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="currentColor"/>
+                            </marker>
+                        </defs>
+                    </svg>
 
-                <!-- Seção de Contato -->
-                <section id="contact" class="py-20 bg-white">
-                    <div class="max-w-4xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <p class="text-sm font-bold text-redDark tracking-wider uppercase">Entre em Contato</p>
-                            <h3 class="text-3xl md:text-4xl font-bold text-black mt-2">Vamos conversar sobre seu projeto</h3>
-                            <p class="text-lg text-grayDark mt-4">Preencha o formulário abaixo e retornaremos em breve.</p>
+                    <div class="absolute top-1/4 left-10 floating-card rounded-xl p-4 float-animation" style="animation-delay: 0.5s;">
+                        <div class="w-12 h-12 bg-redPrimary rounded-full mb-2"></div>
+                        <div class="text-xs font-bold text-gray-900">Fotografia</div>
+                        <div class="text-xs text-gray-600">e Videomaker</div>
+                    </div>
+
+                    <div class="absolute bottom-1/3 right-10 floating-card rounded-xl p-4 float-animation" style="animation-delay: 1s;">
+                        <div class="w-12 h-12 bg-redPrimary rounded-full mb-2 pulse-glow"></div>
+                        <div class="text-xs font-bold text-gray-900">Marketing</div>
+                        <div class="text-xs text-gray-600">e Soluções Digitais</div>
+                    </div>
+                </div>
+
+                <div class="max-w-4xl z-10 relative">
+                    <div class="mb-8">
+                        <div class="flex items-center justify-center mb-4">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-redPrimary">
+                                <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h1 class="font-bebas text-4xl sm:text-6xl md:text-8xl text-gray-900 leading-tight tracking-wide mb-6 hero-text">
+                            #TRANSFORMAMOS<br/>
+                            <span class="text-redPrimary">IDEIAS EM</span><br/>
+                            <span class="text-gray-900">CONEXÕES REAIS</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-gray-200 mb-8 px-2 max-w-2xl mx-auto bg-white bg-opacity-80 p-4 rounded-lg">
+                            Somos a Creative, uma agência de marketing digital para empresas, especializada também em fotografia profissional e produção de filmes criativos de curta duração.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="#contact" class="inline-flex items-center px-8 py-4 bg-redPrimary text-white font-bold rounded-xl hover:bg-red-700 transition-all transform hover:-translate-y-1">
+                                <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M5 12h14m-7-7l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Solicite um orçamento
+                            </a>
+                            
+                            <a href="#cases" class="inline-flex items-center px-8 py-4 border-2 border-redPrimary text-gray-900 font-bold rounded-xl hover:bg-redPrimary hover:text-white transition-all">
+                                <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                                    <polygon points="10,8 16,12 10,16" fill="currentColor"/>
+                                </svg>
+                                Ver Nossos Cases
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="quemsomos-content" class="py-20 bg-gray-50 rounded-3xl mt-12 px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <p class="text-sm font-bold text-redPrimary tracking-wider uppercase">Sobre Nós</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Quem Somos</h3>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <img src="logo-creative.jpg" alt="Logo Creative" class="rounded-xl shadow-soft w-full">
+                        </div>
+                        <div>
+                            <p class="text-lg text-gray-600 mb-4">
+                                Na Agência Creative, somos movidos pela paixão de transformar marcas e ideias em algo único e inesquecível. Nossa missão é ajudar empresas a se destacarem com criatividade, soluções modernas e resultados reais.
+                            </p>
+                            <p class="text-lg text-gray-600 mb-4">
+                                Aqui, tratamos cada cliente como especial, criando identidades jovens e autênticas, que se conectam com o público e geram impacto. Nosso trabalho vai além do convencional - é pensado nos detalhes do futuro, sempre focado em qualidade e performance.
+                            </p>
+                            <p class="text-lg text-gray-600">
+                                Nosso diferencial? Sempre buscamos tornar nosso trabalho mais acessível, oferecendo promoções e campanhas que reduzem o valor da parcela mensal sem perder a excelência. Acreditamos que boas parcerias começam com confiança e cuidado, e estamos aqui para caminhar lado a lado com nossos clientes, construindo histórias de sucesso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="py-20 px-6">
+                <div class="max-w-6xl mx-auto text-center">
+                    <p class="text-sm font-bold text-redPrimary tracking-wider uppercase mb-2">Soluções</p>
+                    <h2 class="text-3xl font-bold mb-4 text-gray-900">Nossas Soluções</h2>
+                    <p class="text-gray-600 mb-12">Serviços digitais completos para destacar sua marca no ambiente online.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                            <div class="bg-redPrimary/20 text-redPrimary rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 7h18M3 12h18M3 17h18" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Identidade Visual</h3>
+                            <p class="text-gray-600">Criação de logo, paleta de cores, tipografia e aplicação da marca para empresas e produtos.</p>
                         </div>
 
-                        <form class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-black mb-2">Nome</label>
-                                    <input type="text" id="name" name="name" required
-                                        class="w-full px-4 py-3 border border-grayLight rounded-lg focus:ring-2 focus:ring-redMedium focus:border-transparent bg-white">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-black mb-2">E-mail</label>
-                                    <input type="email" id="email" name="email" required
-                                        class="w-full px-4 py-3 border border-grayLight rounded-lg focus:ring-2 focus:ring-redMedium focus:border-transparent bg-white">
-                                </div>
+                        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                            <div class="bg-redPrimary/20 text-redPrimary rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 2H7a5 5 0 00-5 5v10a5 5 0 005 5h10a5 5 0 005-5V7a5 5 0 00-5-5z" />
+                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+                                </svg>
                             </div>
-                            <div>
-                                <label for="subject" class="block text-sm font-medium text-black mb-2">Assunto</label>
-                                <input type="text" id="subject" name="subject" required
-                                    class="w-full px-4 py-3 border border-grayLight rounded-lg focus:ring-2 focus:ring-redMedium focus:border-transparent bg-white">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-black mb-2">Mensagem</label>
-                                <textarea id="message" name="message" rows="5" required
-                                    class="w-full px-4 py-3 border border-grayLight rounded-lg focus:ring-2 focus:ring-redMedium focus:border-transparent bg-white"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit"
-                                    class="w-full md:w-auto gradient-primary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-glow transition-all">
-                                    Enviar Mensagem
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </main>
-        </div>
-    </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Redes Sociais</h3>
+                            <p class="text-gray-600">Gestão de conteúdo, design de posts e estratégias para Instagram, Facebook e mais.</p>
+                        </div>
 
-    <!-- Rodapé -->
-    <footer class="gradient-primary text-white py-12 mt-16 relative z-10">
+                        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                            <div class="bg-redPrimary/20 text-redPrimary rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M4 6h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Videomaker</h3>
+                            <p class="text-gray-600">Criação de vídeos promocionais, institucionais e para redes sociais com edição profissional.</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                            <div class="bg-redPrimary/20 text-redPrimary rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l4-4h10l4 4v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                                    <circle cx="12" cy="13" r="4" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Fotografia</h3>
+                            <p class="text-gray-600">Ensaios profissionais, fotos de produto, eventos e cobertura institucional.</p>
+                        </div>
+
+                        <div class="bg-gray-50 p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+                            <div class="bg-redPrimary/20 text-redPrimary rounded-lg w-16 h-16 flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12c0-4.418-3.582-8-8-8S5 7.582 5 12s3.582 8 8 8 8-3.582 8-8z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Consultoria Digital</h3>
+                            <p class="text-gray-600">Planejamento estratégico e orientação para transformar sua presença online.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cases" class="py-20 px-6">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <p class="text-sm font-bold text-redPrimary tracking-wider uppercase">Nossos Cases</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Projetos que geram <span class="text-redPrimary">resultados</span></h3>
+                    <p class="text-lg text-gray-600 mt-4">Explore alguns dos nossos trabalhos mais recentes. Cada projeto é uma história de sucesso e colaboração.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                    <a href="https://agenciacreative.pixieset.com/vindadarafaela/" target="_blank" class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case1.jpg" alt="Imagem do Case 1" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://agenciacreative.pixieset.com/flyproduz/" target="_blank" class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case2.jpg" alt="Imagem do Case 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://agenciacreative.pixieset.com/ligacamponovense/" target="_blank" class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case3.jpg" alt="Imagem do Case 3" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://agenciacreative.pixieset.com/luizaborges/" target="_blank" class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case4.jpg" alt="Imagem do Case 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://agenciacreative.pixieset.com/tecdeenfermagem/" target="_blank" class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case5.jpg" alt="Imagem do Case 5" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://agenciacreative.pixieset.com/feiradecinciaspauloblasi/" target="_blank" class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case6.jpg" alt="Imagem do Case 6" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="https://www.instagram.com/agen.creative?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="bg-gray-50 text-gray-700 px-6 py-3 rounded-xl border border-gray-200 hover:bg-redPrimary hover:text-white transition-colors font-semibold">
+                        Ver todos no Instagram
+                    </a>
+                </div>
+            </section>
+
+            <section id="contact" class="py-20 px-6 bg-gray-50 rounded-3xl">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <p class="text-sm font-bold text-redPrimary tracking-wider uppercase">Entre em Contato</p>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Vamos conversar sobre seu projeto</h3>
+                        <p class="text-lg text-gray-600 mt-4">Preencha o formulário abaixo e retornaremos em breve.</p>
+                    </div>
+
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nome</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-redPrimary focus:border-redPrimary bg-white text-gray-900">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-redPrimary focus:border-redPrimary bg-white text-gray-900">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Assunto</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-redPrimary focus:border-redPrimary bg-white text-gray-900">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-redPrimary focus:border-redPrimary bg-white text-gray-900"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full md:w-auto gradient-primary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-glow transition-all">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-50 text-gray-700 py-12 mt-16 relative z-10 rounded-t-3xl">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Redes Sociais -->
             <div>
-                <h4 class="text-lg font-bold mb-4">Redes Sociais</h4>
-                <ul class="space-y-2">
+                <h4 class="text-lg font-bold mb-4 text-gray-900">Redes Sociais</h4>
+                <ul class="space-y-2 text-gray-600">
                     <li class="flex items-center gap-2">
-                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
-                        <a href="https://www.instagram.com/agen.creative?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            class="hover:underline">@agen.creative</a>
+                        <a href="https://www.instagram.com/agen.creative?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="hover:underline">@agen.creative</a>
                     </li>
                     <li class="flex items-center gap-2">
-                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        <svg class="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                         </svg>
-                        <a href="https://wa.me/5549988895947?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20seus%20produtos."
-                            class="hover:underline">(49) 9 8889-5947</a>
+                        <a href="https://wa.me/5549988895947?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20seus%20produtos." class="hover:underline">(49) 9 8889-5947</a>
                     </li>
                 </ul>
             </div>
 
-            <!-- Agência -->
             <div>
-                <h4 class="text-lg font-bold mb-4">Agência</h4>
-                <ul class="space-y-2">
+                <h4 class="text-lg font-bold mb-4 text-gray-900">Agência</h4>
+                <ul class="space-y-2 text-gray-600">
                     <li><button id="footer-quemsomos-btn" class="hover:underline">Quem Somos</button></li>
                     <li><a href="#services" class="hover:underline">Serviços</a></li>
                     <li><a href="#cases" class="hover:underline">Projetos</a></li>
                 </ul>
             </div>
 
-            <!-- Formulário de Contato -->
             <div>
-                <h4 class="text-lg font-bold mb-4">Fale Conosco</h4>
-                <form action="mailto:guilhermeoliveiracg4@gmail.com" method="POST" enctype="text/plain"
-                    class="space-y-4">
-                    <input type="text" name="nome" placeholder="Seu nome"
-                        class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded text-white placeholder-white/70">
-                    <input type="email" name="email" placeholder="Seu e-mail"
-                        class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded text-white placeholder-white/70">
-                    <textarea name="mensagem" rows="4" placeholder="Sua mensagem"
-                        class="w-full px-4 py-2 bg-white/10 border border-white/20 rounded text-white placeholder-white/70"></textarea>
-                    <button type="submit"
-                        class="w-full bg-yellowGold text-black font-bold py-2 px-4 rounded hover:shadow-glow transition">Enviar</button>
+                <h4 class="text-lg font-bold mb-4 text-gray-900">Fale Conosco</h4>
+                <form action="mailto:guilhermeoliveiracg4@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+                    <input type="text" name="nome" placeholder="Seu nome" class="w-full px-4 py-2 bg-white border border-gray-300 rounded text-gray-900 placeholder-gray-500">
+                    <input type="email" name="email" placeholder="Seu e-mail" class="w-full px-4 py-2 bg-white border border-gray-300 rounded text-gray-900 placeholder-gray-500">
+                    <textarea name="mensagem" rows="4" placeholder="Sua mensagem" class="w-full px-4 py-2 bg-white border border-gray-300 rounded text-gray-900 placeholder-gray-500"></textarea>
+                    <button type="submit" class="w-full bg-redPrimary text-white font-bold py-2 px-4 rounded hover:shadow-glow transition">Enviar</button>
                 </form>
             </div>
         </div>
 
-        <div class="text-center mt-10 text-sm text-white/80">
+        <div class="text-center mt-10 text-sm text-gray-500">
             <p>© 2025 Agência Creative. Todos os direitos reservados.</p>
-            <p>Desenvolvido por<a href="https://christiankcastro.github.io/Korb_design/"
-                    class="text-yellowGold hover:underline"> Korb Design</a></p>
+            <p>Desenvolvido por<a href="https://christiankcastro.github.io/Korb_design/" class="text-redPrimary hover:underline"> Korb Design</a></p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Menu mobile
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const closeMobileMenu = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mainContent = document.querySelector('main');
+        const footer = document.querySelector('footer');
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
+            mainContent.style.filter = 'blur(5px)';
+            footer.style.filter = 'blur(5px)';
             document.body.style.overflow = 'hidden';
         });
 
         closeMobileMenu.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
+            mainContent.style.filter = '';
+            footer.style.filter = '';
             document.body.style.overflow = '';
         });
 
-        // Controle da seção "Quem Somos"
         const quemsomosBtn = document.getElementById('quemsomos-btn');
         const mobileQuemsomosBtn = document.getElementById('mobile-quemsomos-btn');
         const footerQuemsomosBtn = document.getElementById('footer-quemsomos-btn');
@@ -637,14 +504,14 @@
         function toggleQuemSomos() {
             quemsomosContent.classList.toggle('active');
            
-            // Rolagem suave para a seção
             if (quemsomosContent.classList.contains('active')) {
-                quemsomosContent.scrollIntoView({ behavior: 'smooth' });
+                quemsomosContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
            
-            // Fechar menu mobile se estiver aberto
             if (!mobileMenu.classList.contains('hidden')) {
                 mobileMenu.classList.add('hidden');
+                mainContent.style.filter = '';
+                footer.style.filter = '';
                 document.body.style.overflow = '';
             }
         }
@@ -653,19 +520,19 @@
         mobileQuemsomosBtn.addEventListener('click', toggleQuemSomos);
         footerQuemsomosBtn.addEventListener('click', toggleQuemSomos);
 
-        // Fechar menu mobile ao clicar em um link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                mainContent.style.filter = '';
+                footer.style.filter = '';
                 document.body.style.overflow = '';
             });
         });
 
-        // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.getElementById(this.getAttribute('href').substring(1));
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -675,13 +542,12 @@
             });
         });
 
-        // Parallax effect para elementos decorativos
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const parallaxElements = document.querySelectorAll('.float-animation');
             
             parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
+                const speed = 0.3 + (index * 0.1);
                 element.style.transform = `translateY(${scrolled * speed}px)`;
             });
         });
