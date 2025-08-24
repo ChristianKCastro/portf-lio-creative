@@ -5,11 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agência Creative - Marketing Digital</title>
-    <meta name="description" content="Criamos experiências digitais que convertem. Agência especializada em marketing digital e produção audiovisual." />
+    <meta name="description"
+        content="Criamos experiências digitais que convertem. Agência especializada em marketing digital e produção audiovisual." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -61,46 +63,50 @@
         .header-container {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
 
         .hero-text {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .floating-card {
-            backdrop-filter: blur(10px);
-            background: rgba(248, 249, 250, 0.9);
-            border: 1px solid rgba(220, 38, 38, 0.2);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
         }
 
         .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 15px rgba(220, 38, 38, 0.3); }
-            50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.6); }
-        }
-
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
         }
 
         #quemsomos-content {
             display: none;
             opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            position: absolute;
+            width: 100%;
+            left: 0;
         }
 
         #quemsomos-content.active {
             display: block;
             opacity: 1;
+            transform: translateY(0);
+            position: relative;
+        }
+
+        .wavy-background {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='wave' patternUnits='userSpaceOnUse' width='60' height='60' patternTransform='rotate(45)'%3E%3Cpath d='M 0,10 C 10,0 20,0 30,10 C 40,20 50,20 60,10' stroke='%23E5E7EB' stroke-width='1' fill='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23wave)'/%3E%3C/svg%3E");
+            background-size: 200px;
+            transition: opacity 0.5s ease-out;
         }
     </style>
 </head>
@@ -110,15 +116,20 @@
     <header class="header-container fixed top-0 left-0 w-full z-50 py-4">
         <div class="container mx-auto px-6 md:px-8 max-w-7xl">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-redPrimary">
-                        <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z" fill="currentColor"/>
+                <a href="#" onclick="location.reload(); return false;"
+                    class="flex items-center space-x-3 cursor-pointer" title="Recarregar Página">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="text-redPrimary">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM13 12C13 12.5523 12.5523 13 12 13H9C8.44772 13 8 12.5523 8 12C8 11.4477 8.44772 11 9 11H11V9C11 8.44772 11.4477 8 12 8C12.5523 8 13 8.44772 13 9V12ZM16 15.8889C16 16.4412 15.5523 16.8889 15 16.8889C14.4477 16.8889 14 16.4412 14 15.8889V15C14 14.4477 14.4477 14 15 14C15.5523 14 16 14.4477 16 15V15.8889Z"
+                            fill="currentColor" />
                     </svg>
-                    <h1 class="text-3xl font-extrabold text-gray-900">#Creative</h1>
-                </div>
+                    <h1 class="text-2xl font-bold text-gray-900 tracking-wider">Agência Creative</h1>
+                </a>
 
                 <button id="mobile-menu-button" class="md:hidden text-gray-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="4" x2="20" y1="12" y2="12" />
                         <line x1="4" x2="20" y1="6" y2="6" />
                         <line x1="4" x2="20" y1="18" y2="18" />
@@ -126,11 +137,15 @@
                 </button>
 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <button id="quemsomos-btn" class="text-gray-700 hover:text-redPrimary transition-colors font-medium">Quem Somos</button>
-                    <a href="#services" class="text-gray-700 hover:text-redPrimary transition-colors font-medium">Serviços</a>
-                    <a href="#cases" class="text-gray-700 hover:text-redPrimary transition-colors font-medium">Cases</a>
-                    <a href="#contact-section" class="gradient-primary text-white px-6 py-3 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
+                    <button id="quemsomos-btn"
+                        class="text-gray-900 hover:text-redPrimary transition-colors font-medium">Quem Somos</button>
+                    <a href="#services"
+                        class="text-gray-900 hover:text-redPrimary transition-colors font-medium">Serviços</a>
+                    <a href="#cases" class="text-gray-900 hover:text-redPrimary transition-colors font-medium">Cases</a>
+                    <a href="#contact"
+                        class="gradient-primary text-white px-6 py-2.5 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
                 </nav>
+
             </div>
         </div>
     </header>
@@ -138,70 +153,190 @@
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white z-50 p-6 mt-16">
         <div class="flex justify-end mb-8">
             <button id="close-mobile-menu" class="text-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
         </div>
         <nav class="flex flex-col space-y-6 text-center">
-            <button id="mobile-quemsomos-btn" class="text-2xl text-gray-700 hover:text-redPrimary transition-colors">Quem Somos</button>
-            <a href="#services" class="text-2xl text-gray-700 hover:text-redPrimary transition-colors">Serviços</a>
-            <a href="#cases" class="text-2xl text-gray-700 hover:text-redPrimary transition-colors">Cases</a>
-            <a href="#contact" class="text-2xl gradient-primary text-white px-6 py-3 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
+            <button id="mobile-quemsomos-btn" class="text-2xl text-gray-900 hover:text-redPrimary transition-colors">Quem Somos</button>
+            <a href="#services" class="text-2xl text-gray-900 hover:text-redPrimary transition-colors">Serviços</a>
+            <a href="#cases" class="text-2xl text-gray-900 hover:text-redPrimary transition-colors">Cases</a>
+            <a href="#contact"
+                class="text-2xl gradient-primary text-white px-6 py-3 rounded-lg hover:shadow-glow transition-all font-semibold">Contato</a>
         </nav>
     </div>
 
-    <div class="pt-20"></div>
-
     <main class="relative z-10">
-        <div class="container mx-auto px-6 py-8 md:px-8">
-            <section class="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 pt-24 overflow-hidden">
-                <div class="absolute inset-0 overflow-hidden">
-                    <svg class="absolute top-10 left-10 w-16 h-16 text-grayMedium opacity-50 float-animation" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z"/>
-                    </svg>
-                    
-                    <svg class="absolute top-1/3 right-20 w-24 h-24 text-grayMedium opacity-30" viewBox="0 0 100 100" fill="none">
-                        <path d="M20 80 Q 50 20 80 50" stroke="currentColor" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                        <defs>
-                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-                                <polygon points="0 0, 10 3.5, 0 7" fill="currentColor"/>
-                            </marker>
-                        </defs>
-                    </svg>
+        <div class="container mx-auto px-6 md:px-8">
+            <section
+                class="relative min-h-screen flex items-center justify-center text-center px-4 sm:px-6 pt-24 overflow-hidden">
+                <div id="wavy-bg" class="absolute inset-0 z-0 opacity-50 wavy-background"></div>
 
-                    <div class="absolute top-1/4 left-10 floating-card rounded-xl p-4 float-animation" style="animation-delay: 0.5s;">
-                        <div class="w-12 h-12 bg-redPrimary rounded-full mb-2"></div>
-                        <div class="text-xs font-bold text-gray-900">Fotografia</div>
-                        <div class="text-xs text-gray-600">e Videomaker</div>
-                    </div>
-
-                    <div class="absolute bottom-1/3 right-10 floating-card rounded-xl p-4 float-animation" style="animation-delay: 1s;">
-                        <div class="w-12 h-12 bg-redPrimary rounded-full mb-2 pulse-glow"></div>
-                        <div class="text-xs font-bold text-gray-900">Marketing</div>
-                        <div class="text-xs text-gray-600">e Soluções Digitais</div>
-                    </div>
+                <div class="absolute inset-0 z-0 overflow-hidden">
+                    <svg class="absolute top-1/4 left-5 md:left-20 w-24 h-24 text-gray-300 opacity-70 float-animation"
+                        style="animation-delay: 0.5s;" viewBox="0 0 100 100" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 50 C 20 20, 80 20, 80 50 S 20 80, 50 80" stroke="currentColor" stroke-width="2"
+                            fill="none" />
+                    </svg>
+                    <svg class="absolute bottom-1/4 right-5 md:right-20 w-32 h-32 text-gray-300 opacity-70 float-animation"
+                        style="animation-delay: 1s;" viewBox="0 0 100 100" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M80,20 C 80,50 20,50 20,80" stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
+                    <svg class="absolute top-10 right-10 md:right-40 w-16 h-16 text-gray-300 opacity-60 float-animation"
+                        style="animation-delay: 1.5s;" viewBox="0 0 100 100" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 10 a 40 40 0 0 1 0 80 a 30 30 0 0 0 0 -60 a 20 20 0 0 1 0 40 a 10 10 0 0 0 0 -20"
+                            stroke="currentColor" stroke-width="2" fill="none" />
+                    </svg>
                 </div>
 
                 <div class="max-w-4xl z-10 relative">
-                    <div class="mb-8">
-                        <div class="flex items-center justify-center mb-4">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-redPrimary">
-                                <path d="M9 3H15L14 9H20L19 15H13L12 21H6L7 15H1L2 9H8L9 3Z" fill="currentColor"/>
+                    <div class="mb-10">
+                        
+                    </div>
+                    <h1
+                        class="font-bebas text-5xl sm:text-6xl md:text-8xl text-red-900 leading-tight tracking-wider mb-4 hero-text">
+                        TRANSFORMANDO IDEIAS
+                        <span class="text-greyPrimary">EM CONEXÕES REAIS.</span>
+                        
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                        Somos uma agência de marketing digital para empresas, especializada em fotografia profissional e
+                        produção de filmes criativos de curta duração.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-redPrimary text-white font-bold rounded-xl hover:bg-redHover transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14m-7-7l7 7-7 7" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Solicite um orçamento
+                        </a>
+                        <a href="#cases"
+                            class="inline-flex items-center justify-center px-8 py-4 bg-redPrimary/90 text-white font-bold rounded-xl hover:bg-redHover transition-all w-full sm:w-auto">
+                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" stroke-width="2" />
+                                <polygon points="10,8 16,12 10,16" fill="currentColor" />
+                            </svg>
+                            Ver Nossos Cases
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cases" class="py-20 px-6">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <p class="text-sm font-bold text-redPrimary tracking-wider uppercase">Nossos Cases</p>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mt-2">Projetos que geram <span class="text-redPrimary">resultados</span></h3>
+                    <p class="text-lg text-grayLight mt-4">Explore alguns dos nossos trabalhos mais recentes. Cada projeto é uma história de sucesso e colaboração.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  
+                    <a href="https://agenciacreative.pixieset.com/vindadarafaela/" target="_blank"
+                        class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case1.jpg" alt="Imagem do Case 1"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                             </svg>
                         </div>
-                        <h1 class="font-bebas text-4xl sm:text-6xl md:text-8xl text-gray-900 leading-tight tracking-wide mb-6 hero-text">
-                            #TRANSFORMAMOS<br/>
-                            <span class="text-redPrimary">IDEIAS EM</span><br/>
-                            <span class="text-gray-900">CONEXÕES REAIS</span>
-                        </h1>
-                        <p class="text-lg sm:text-xl text-gray-200 mb-8 px-2 max-w-2xl mx-auto bg-white bg-opacity-80 p-4 rounded-lg">
-                            Somos a Creative, uma agência de marketing digital para empresas, especializada também em fotografia profissional e produção de filmes criativos de curta duração.
-                        </p>
-
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <a href="#contact" class="inline-flex items-center px-8 py-4 bg-redPrimary text-white font-bold rounded-xl hover:bg-red-700 transition-all transform hover:-translate-y-1">
+                    </a>
+                    
+                    <a href="https://agenciacreative.pixieset.com/flyproduz/" target="_blank"
+                        class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case2.jpg" alt="Imagem do Case 2"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                
+                    <a href="https://agenciacreative.pixieset.com/ligacamponovense/" target="_blank"
+                        class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case3.jpg" alt="Imagem do Case 3"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://agenciacreative.pixieset.com/luizaborges/" target="_blank"
+                        class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case4.jpg" alt="Imagem do Case 4"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                   
+                    <a href="https://agenciacreative.pixieset.com/tecdeenfermagem/" target="_blank"
+                        class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case5.jpg" alt="Imagem do Case 5"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                   
+                    <a href="https://agenciacreative.pixieset.com/feiradecinciaspauloblasi/" target="_blank"
+                        class="group relative block w-full aspect-square overflow-hidden rounded-xl shadow-soft">
+                        <img src="foto-case6.jpg" alt="Imagem do Case 6"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-redPrimary/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class=-redPrimary text-white font-bold rounded-xl hover:bg-red-700 transition-all transform hover:-translate-y-1">
                                 <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M5 12h14m-7-7l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
